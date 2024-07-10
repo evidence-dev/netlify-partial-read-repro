@@ -49,7 +49,9 @@
                 Loading...
             {:then text}
                 <div class="flex-1">
-                    <pre class="bg-slate-100 p-2 max-h-fit">{text || "[[Empty Response]]"}</pre>
+                    <pre
+                        class="bg-slate-100 p-2 max-h-48 h-fit max-w-prose text-ellipsis overflow-hidden">{text ||
+                            "[[Empty Response]]"}</pre>
                 </div>
             {/await}
 
