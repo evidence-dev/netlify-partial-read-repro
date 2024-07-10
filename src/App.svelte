@@ -10,10 +10,6 @@
         <dd>{v}</dd>
       {/each}
     </dl>
-    {console.log(e)}
-    {#await e.body then t}
-      {t}
-    {/await}
   {/await}
 
   <h2>Full File Read</h2>
@@ -21,12 +17,12 @@
     <pre>{e}</pre>
   {/await}
 
-  <h2>Partial File Read (0-18)</h2>
+  <h2>Partial File Read // Display 0-9 // Bytes 0-18</h2>
   {#await fetch( "/my-file.txt", { method: "GET", headers: { Range: "bytes=0-18" } }, ).then( (r) => r.text(), ) then e}
     <pre>{e}</pre>
   {/await}
 
-  <h2>Partial File Read (19-28)</h2>
+  <h2>Partial File Read // Display 10-19 // Bytes 19-28</h2>
   {#await fetch( "/my-file.txt", { method: "GET", headers: { Range: "bytes=19-49" } }, ).then( (r) => r.text(), ) then e}
     <pre>{e}</pre>
   {/await}
