@@ -45,9 +45,10 @@
     />
   </div>
   <div class="flex flex-col gap-4">
+    <!-- content length here is extracted from wc -l < my-very-large-file.txt -->
     <Request
       title="Head"
-      expectedContentLength={139582656}
+      expectedContentLength={104857600}
       response={fetch("/my-very-large-file.txt", { method: "HEAD" })}
       open
     />
